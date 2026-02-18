@@ -9,6 +9,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     environment: npm
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v4
 
