@@ -1,5 +1,5 @@
 /**
- * homebridge-openclaw v2.1.0
+ * homebridge-openclaw v2.2.0
  *
  * Exposes a simplified REST API so that an OpenClaw agent can list and
  * control HomeKit devices managed by Homebridge.
@@ -27,7 +27,7 @@ const rateLimit = require('express-rate-limit');
 // ─── Constants ──────────────────────────────────────────────────────────────
 const PLUGIN_NAME = 'homebridge-openclaw';
 const ACCESSORY_NAME = 'OpenClawAPI';
-const VERSION = '2.1.0';
+const VERSION = '2.2.0';
 const DEFAULT_PORT = 8899;
 const DEFAULT_BIND = '0.0.0.0';
 const DEFAULT_RATE_LIMIT = 100; // requests per minute
@@ -422,10 +422,10 @@ function setupRoutes(app, apiToken, uiClient) {
 // ─── Homebridge registration ────────────────────────────────────────────────
 
 module.exports = function (api) {
-  api.registerAccessory(PLUGIN_NAME, ACCESSORY_NAME, OpenClawAccessory);
+  api.registerPlatform(PLUGIN_NAME, ACCESSORY_NAME, OpenClawPlatform);
 };
 
-class OpenClawAccessory {
+class OpenClawPlatform {
   constructor(log, config, api) {
     this.log = log;
     this.config = config;
@@ -487,15 +487,4 @@ class OpenClawAccessory {
     });
   }
 
-  getServices() {
-    const Service = this.api.hap.Service;
-    const Characteristic = this.api.hap.Characteristic;
-    const info = new Service.AccessoryInformation();
-    info
-      .setCharacteristic(Characteristic.Name, 'OpenClaw API')
-      .setCharacteristic(Characteristic.Manufacturer, 'OpenClaw')
-      .setCharacteristic(Characteristic.Model, 'REST API Bridge')
-      .setCharacteristic(Characteristic.SerialNumber, VERSION);
-    return [info];
-  }
 }

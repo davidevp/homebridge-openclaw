@@ -28,11 +28,11 @@ Or via **Homebridge Config UI X**: Plugins → search “openclaw” → Install
 
 ### Minimum configuration
 
-Add to your Homebridge `config.json` under **`accessories`**:
+Add to your Homebridge `config.json` under **`platforms`**:
 
 ```json
 {
-  "accessory": "OpenClawAPI",
+  "platform": "OpenClawAPI",
   "name": "OpenClaw API"
 }
 ```
@@ -47,7 +47,7 @@ That’s it. The plugin will:
 
 ```json
 {
-  "accessory": "OpenClawAPI",
+  "platform": "OpenClawAPI",
   "name": "OpenClaw API",
   "apiPort": 8899,
   "apiBind": "0.0.0.0",
@@ -222,11 +222,11 @@ O desde **Homebridge Config UI X**: Plugins → buscar “openclaw” → Instal
 
 ### Configuración mínima
 
-Añadir al `config.json` de Homebridge en la sección **`accessories`**:
+Añadir al `config.json` de Homebridge en la sección **`platforms`**:
 
 ```json
 {
-  "accessory": "OpenClawAPI",
+  "platform": "OpenClawAPI",
   "name": "OpenClaw API"
 }
 ```
@@ -241,7 +241,7 @@ Con eso basta. El plugin:
 
 ```json
 {
-  "accessory": "OpenClawAPI",
+  "platform": "OpenClawAPI",
   "name": "OpenClaw API",
   "apiPort": 8899,
   "apiBind": "0.0.0.0",

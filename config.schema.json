@@ -1,7 +1,6 @@
 {
   "pluginAlias": "OpenClawAPI",
-  "pluginType": "accessory",
-  "singular": true,
+  "pluginType": "platform",
   "headerDisplay": "This plugin exposes a REST API so that [OpenClaw](https://docs.openclaw.ai) agents can list and control your HomeKit devices via Homebridge.",
   "footerDisplay": "For full documentation see the [README](https://github.com/davidevp/homebridge-openclaw#readme).",
   "schema": {
@@ -11,7 +10,7 @@
         "title": "Name",
         "type": "string",
         "default": "OpenClaw API",
-        "description": "Display name for this accessory in Homebridge."
+        "description": "Display name for this platform in Homebridge."
       },
       "apiPort": {
         "title": "API Port",

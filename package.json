@@ -1,7 +1,7 @@
 {
   "name": "homebridge-openclaw",
   "displayName": "OpenClaw API",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Expose a REST API so OpenClaw agents can list and control HomeKit devices via Homebridge.",
   "main": "index.js",
   "keywords": [
