@@ -1,5 +1,5 @@
 /**
- * homebridge-openclaw v2.2.0
+ * homebridge-openclaw v2.2.1
  *
  * Exposes a simplified REST API so that an OpenClaw agent can list and
  * control HomeKit devices managed by Homebridge.
@@ -27,7 +27,7 @@ const rateLimit = require('express-rate-limit');
 // ─── Constants ──────────────────────────────────────────────────────────────
 const PLUGIN_NAME = 'homebridge-openclaw';
 const ACCESSORY_NAME = 'OpenClawAPI';
-const VERSION = '2.2.0';
+const VERSION = '2.2.1';
 const DEFAULT_PORT = 8899;
 const DEFAULT_BIND = '0.0.0.0';
 const DEFAULT_RATE_LIMIT = 100; // requests per minute

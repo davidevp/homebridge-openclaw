@@ -1,7 +1,7 @@
 {
   "name": "homebridge-openclaw",
   "displayName": "OpenClaw API",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Expose a REST API so OpenClaw agents can list and control HomeKit devices via Homebridge.",
   "main": "index.js",
   "keywords": [
@@ -32,7 +32,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidevp/homebridge-openclaw.git"
+    "url": "git+https://github.com/davidevp/homebridge-openclaw.git"
   },
   "homepage": "https://github.com/davidevp/homebridge-openclaw#readme",
   "bugs": {
