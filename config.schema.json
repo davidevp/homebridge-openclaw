@@ -1,0 +1,89 @@
+{
+  "pluginAlias": "OpenClawAPI",
+  "pluginType": "accessory",
+  "singular": true,
+  "headerDisplay": "This plugin exposes a REST API so that [OpenClaw](https://docs.openclaw.ai) agents can list and control your HomeKit devices via Homebridge.",
+  "footerDisplay": "For full documentation see the [README](https://github.com/davidevp/homebridge-openclaw#readme).",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "OpenClaw API",
+        "description": "Display name for this accessory in Homebridge."
+      },
+      "apiPort": {
+        "title": "API Port",
+        "type": "integer",
+        "default": 8899,
+        "minimum": 1024,
+        "maximum": 65535,
+        "description": "Port for the REST API server (1024-65535)."
+      },
+      "apiBind": {
+        "title": "Bind Address",
+        "type": "string",
+        "default": "0.0.0.0",
+        "description": "Network interface to bind to. Use 127.0.0.1 for local-only access.",
+        "oneOf": [
+          { "title": "All interfaces (0.0.0.0)", "enum": ["0.0.0.0"] },
+          { "title": "Local only (127.0.0.1)", "enum": ["127.0.0.1"] }
+        ]
+      },
+      "token": {
+        "title": "API Token",
+        "type": "string",
+        "description": "Bearer token for authenticating OpenClaw requests. Leave empty to auto-generate."
+      },
+      "rateLimit": {
+        "title": "Rate Limit",
+        "type": "integer",
+        "default": 100,
+        "minimum": 1,
+        "maximum": 10000,
+        "description": "Maximum requests per minute per IP address (1-10000)."
+      },
+      "homebridgeUiUrl": {
+        "title": "Config UI X URL",
+        "type": "string",
+        "placeholder": "http://localhost:8581",
+        "description": "URL of Homebridge Config UI X. Only change if running on a non-default port."
+      },
+      "homebridgeUiUser": {
+        "title": "Config UI X Username",
+        "type": "string",
+        "description": "Only required if automatic credential detection fails (non-Docker setups)."
+      },
+      "homebridgeUiPass": {
+        "title": "Config UI X Password",
+        "type": "string",
+        "description": "Only required if automatic credential detection fails (non-Docker setups)."
+      }
+    },
+    "required": ["name"]
+  },
+  "layout": [
+    {
+      "type": "fieldset",
+      "title": "Server",
+      "items": [
+        { "key": "apiPort", "type": "number" },
+        "apiBind",
+        { "key": "rateLimit", "type": "number" }
+      ]
+    },
+    {
+      "type": "fieldset",
+      "title": "Authentication",
+      "description": "The token is auto-generated if left empty. Only fill the UI credentials if auto-detection does not work.",
+      "items": ["token"]
+    },
+    {
+      "type": "fieldset",
+      "title": "Advanced (Config UI X)",
+      "expandable": true,
+      "items": ["homebridgeUiUrl", "homebridgeUiUser", "homebridgeUiPass"]
+    }
+  ]
+}

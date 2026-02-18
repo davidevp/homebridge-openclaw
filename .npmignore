@@ -1,0 +1,36 @@
+# Development files
+.git/
+.github/
+.vscode/
+.cursor/
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files
+test/
+tests/
+test-*.js
+*.test.js
+*.spec.js
+
+# Examples and docs not needed in package
+examples/
+VERIFICACION.md
+
+# Build artifacts
+node_modules/
+coverage/
+*.tgz
+
+# Docker files
+docker-compose*.yml
+Dockerfile*
+
+# Local config
+.env
+.env.*
+.openclaw-token

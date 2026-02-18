@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local / secrets
+.env
+.env.*
+.openclaw-token
+
+# Logs and temp
+*.log
+.npm-debug.log*
+*.tmp
+*.swp
+*~
+
+# Build / coverage
+coverage/
+*.tgz
+
+# IDE (optional)
+.idea/
+.vscode/
+.cursor/
