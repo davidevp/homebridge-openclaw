@@ -1,5 +1,7 @@
 # homebridge-openclaw
 
+[![verified-by-homebridge](https://img.shields.io/badge/homebridge-verified-blueviolet?color=%23491F59&style=for-the-badge&logoColor=%23FFFFFF&logo=homebridge)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
+
 **EN** — Homebridge plugin that exposes a simplified REST API so an [OpenClaw](https://docs.openclaw.ai) agent can list and control HomeKit devices.
 
 **ES** — Plugin para Homebridge que expone una API REST simplificada para que un agente de [OpenClaw](https://docs.openclaw.ai) pueda listar y controlar dispositivos HomeKit.
